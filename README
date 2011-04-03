@@ -1,0 +1,23 @@
+CfA Geometry Service
+
+Hello fellow GIS geeks! This is a simple service for performing a few basic geometry operations. It lives in Google App Engine (GAE) and is powered by Java Topology Suite (JTS). It is being built to support Code for America (CfA) projects (for now).
+Supported Operations
+Buffer
+
+Computes a buffer area around this geometry having the given width. The buffer of a Geometry is the Minkowski sum or difference of the geometry with a disc of radius abs(distance). Learn more.
+Params
+
+    wkt - a WKT representation of any geometry or any geometry collection. Learn more.
+    d - the distance to apply to the buffer operation. This assumes that the distance and the WKT are in the same units.
+
+Example Call
+http://cfa-geometry-service.appspot.com/buffer?wkt=POINT (30 10)&d=5
+Union
+
+Computes the union of all the elements of this geometry. Heterogeneous GeometryCollections are fully supported. Learn more.
+Params
+
+    wkt - a WKT representation of any geometry or any geometry collection. Learn more.
+
+Example Call
+http://cfa-geometry-service.appspot.com/union?wkt=MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)),((20 35, 45 20, 30 5, 10 10, 10 30, 20 35),(30 20, 20 25, 20 15, 30 20)))
